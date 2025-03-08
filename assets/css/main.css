@@ -948,7 +948,7 @@ section,
 .about .content h3 {
   font-size: 14px;
   font-weight: 700;
-  color: var(--accent-color);
+  color: #4CAF50; /* Cambié var(--accent-color) por un verde */
   text-transform: uppercase;
 }
 
@@ -990,6 +990,73 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Vision, Mision, Valor Section
+--------------------------------------------------------------*/
+/* Contenido */
+/* Contenido */
+#mission-vision-values .content {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Títulos */
+#mission-vision-values .content h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4CAF50;
+  text-transform: uppercase;
+}
+
+#mission-vision-values .content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+#mission-vision-values .content p {
+  margin: 15px 0 30px 0;
+  line-height: 24px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Flecha de navegación */
+#mission-vision-values .navigation {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* Centra verticalmente */
+}
+
+#mission-vision-values .btn-nav {
+  padding: 12px 20px;
+  font-size: 24px; /* Tamaño más grande para la flecha */
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s;
+}
+
+#mission-vision-values .btn-nav:hover {
+  background-color: #4CAF50;
+  transform: translateX(5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#mission-vision-values .btn-nav i {
+  font-size: 30px; /* Tamaño más grande de la flecha */
+}
+
+
+
+/*--------------------------------------------------------------
 # Values Section
 --------------------------------------------------------------*/
 .values .card {
@@ -1022,6 +1089,7 @@ section,
 .values .card:hover img {
   transform: scale(1);
 }
+
 
 /*--------------------------------------------------------------
 # Stats Section
@@ -1056,27 +1124,41 @@ section,
 /*--------------------------------------------------------------
 # Features Section
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
 .features .feature-box {
   padding: 24px 20px;
   box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espacio entre icono y texto */
   height: 100%;
+  flex-direction: row; /* Asegura que el texto y el icono estén siempre en fila */
 }
 
 .features .feature-box h3 {
   font-size: 18px;
   font-weight: 700;
   margin: 0;
+  color: #333; /* Color del texto */
 }
 
 .features .feature-box i {
   background: color-mix(in srgb, var(--accent-color), transparent 92%);
   color: var(--accent-color);
   line-height: 0;
-  padding: 4px;
+  padding: 12px;
   margin-right: 10px;
-  font-size: 24px;
-  border-radius: 3px;
+  font-size: 32px;
+  border-radius: 50%; /* Redondear los iconos */
   transition: 0.3s;
 }
 
@@ -1084,6 +1166,46 @@ section,
   background: var(--accent-color);
   color: var(--contrast-color);
 }
+
+.features .feature-box p {
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-top: 10px;
+  margin-left: 42px; /* Para ajustar el texto y evitar que quede muy cerca del icono */
+  line-height: 1.6;
+}
+
+/* Asegurar que las columnas de las características no se desborden */
+.features .col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.features .row {
+  gap: 20px;
+}
+
+/* Responsividad: Ajustar para pantallas pequeñas */
+@media (max-width: 768px) {
+  .features .feature-box {
+    flex-direction: row; /* Mantener los elementos en fila, incluso en pantallas pequeñas */
+    align-items: center; /* Asegurar que el icono y el texto estén centrados verticalmente */
+    text-align: left; /* Asegura que el texto se alinee a la izquierda */
+  }
+
+  .features .feature-box i {
+    margin-right: 10px; /* Mantener separación con el texto */
+    margin-bottom: 0; /* Eliminar margen inferior */
+  }
+
+  .features .feature-box p {
+    margin-left: 42px; /* Ajustar el texto para que no quede tan alejado en pantallas pequeñas */
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # Alt Features Section
@@ -1110,6 +1232,42 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-bottom: 0;
 }
+
+
+/*--------------------------------------------------------------
+# Alt Features Section
+--------------------------------------------------------------*/
+.alt-features .icon-box {
+  display: flex;
+}
+
+.alt-features .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.alt-features .icon-box i {
+  font-size: 44px;
+  line-height: 44px;
+  color: var(--accent-color);
+  margin-right: 15px;
+}
+
+.alt-features .icon-box p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 0;
+}
+
+/* Estilo para las columnas de las características */
+.features .col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 /*--------------------------------------------------------------
 # Services Section
