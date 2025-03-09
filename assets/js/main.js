@@ -208,13 +208,13 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
-
 let currentSection = 'vision'; // Mantiene la sección actual
 
 const visionContent = document.querySelector('.vision');
 const missionContent = document.querySelector('.mission');
 const valuesContent = document.querySelector('.values');
 
+// Secciones y sus contenidos
 const sections = {
   vision: visionContent,
   mission: missionContent,
@@ -227,7 +227,7 @@ function changeContent() {
   visionContent.style.display = 'none';
   missionContent.style.display = 'none';
   valuesContent.style.display = 'none';
-  
+
   // Mostrar la sección actual
   sections[currentSection].style.display = 'block';
 }
@@ -248,14 +248,16 @@ document.getElementById('next-btn').addEventListener('click', () => {
 // Inicializar con la visión
 changeContent();
 
-//cambio de mision vision y valor segun tiempo
-setInterval(function() {
-  let currentSection = document.querySelector(".btn.active").id;
-  if (currentSection === "vision-btn") {
-    changeContent('mission');
-  } else if (currentSection === "mission-btn") {
-    changeContent('values');
+// Cambio de sección automáticamente cada 5 segundos (opcional)
+setInterval(() => {
+  // Ciclar entre las secciones: Visión -> Misión -> Valores -> Visión
+  if (currentSection === 'vision') {
+    currentSection = 'mission';
+  } else if (currentSection === 'mission') {
+    currentSection = 'values';
   } else {
-    changeContent('vision');
+    currentSection = 'vision';
   }
-}, 5000); 
+  changeContent(); // Actualizar contenido
+}, 5000);
+
